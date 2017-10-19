@@ -144,8 +144,9 @@ If Create Vnet was set to false specify here the address space of the subnet tha
 be used at a later step to create a secured VPN connections between the different subnets.
 * Safewalk Gateway IP - Set to the address that will be assigned to the Safewalk Gateway within the
 DMZ subnet (e.g. 10.1.2.4).
-* Number Of Safewalk Instances - Set the number of Safewalk server nodes that will be
-created. The deployment procedure will automatically configure the multimaster topology between all the nodes.
+* Number Of Safewalk Instances - Set to the number of Safewalk Server nodes that will be created in the cluster.
+A cluster with 2/3/4 multimaster Safewalk server nodes will be created and the deployment procedure will automatically configure the multimaster topology between all the Safewalk server nodes.
+Note: To install a single Safewalk node without clustering set this parameter to 1.
 * Vm Username - A username for a privileged account that will be created in the Safewalk servers and
 in the Safewalk Gateway operating system.
 * Vm Password - The password for the corresponding privileged user account for the Safewalk servers
