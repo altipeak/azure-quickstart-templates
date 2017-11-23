@@ -11,6 +11,8 @@ n # new partition for tmp
 p # primary partition
 3 # partition number 
   # default start sector
+  # default max size
+p
 w # write the partition table
 q # and we're done
 EOF
@@ -27,6 +29,7 @@ p # extended partition
 2 # partion number
   # default start sector
   # default max size
+p
 w # write the partition table
 q # and we're done
 EOF
