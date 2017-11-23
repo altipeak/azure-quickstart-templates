@@ -156,7 +156,8 @@
         "firstSafewalkServerIP": "[concat(variables('subnetLANAddressPrefix'), variables('firstLastIPComponent') )]",
         "lastSafewalkServerIP": "[concat(variables('subnetLANAddressPrefix'), add(variables('firstLastIPComponent'), variables('_numberOfSlavesTrue')))]",
         "subnetDMZRef": "[concat(variables('vnetID'), '/subnets/', parameters('subnetDMZName'))]",
-        "sizeOfDiskInGBSafewalk" :  "127",
+        "sizeOfOSDiskInGBSafewalk" :  "63",
+        "sizeOfDataDiskInGBSafewalk" :  "127",
 	    "sizeOfDiskInGBGateway" :  "20",
         "location": "[resourceGroup().location]",
         "gatewayPublicIPName": "[concat(variables('vmPrefix'), '-gateway-public-IP')]",
@@ -177,7 +178,7 @@
                         "blobUri": "[parameters('SafewalkVHDImageURL')]",
                         "caching": "ReadWrite",
                         "storageAccountType": "Standard_LRS",
-                        "diskSizeGB": "[variables('sizeOfDiskInGBSafewalk')]"
+                        "diskSizeGB": "[variables('sizeOfOSDiskInGBSafewalk')]"
                     }
                 }
             }
@@ -736,7 +737,14 @@
                     "osDisk": {
                         "name": "[concat(variables('vmPrefix'), '-server-os-master-vhd')]",
                         "createOption": "FromImage"
-                    }
+                    },
+                    "dataDisks":[
+                        {
+                            "diskSizeGB": "[variables('sizeOfDataDiskInGBSafewalk')]",
+                            "lun": 0,
+                            "createOption": "Empty"
+                        }
+                    ]
                 },
                 "networkProfile": {
                     "networkInterfaces": [
@@ -777,7 +785,14 @@
                     "osDisk": {
                         "name": "[concat(variables('vmPrefix'), '-server-os-slave-', copyIndex(), '-vhd')]",
                         "createOption": "FromImage"
-                    }
+                    },
+                    "dataDisks":[
+                        {
+                            "diskSizeGB": "[variables('sizeOfDataDiskInGBSafewalk')]",
+                            "lun": 0,
+                            "createOption": "Empty"
+                        }
+                    ]
                 },
                 "networkProfile": {
                     "networkInterfaces": [
