@@ -158,7 +158,7 @@
         "subnetDMZRef": "[concat(variables('vnetID'), '/subnets/', parameters('subnetDMZName'))]",
         "sizeOfOSDiskInGBSafewalk" :  "63",
         "sizeOfDataDiskInGBSafewalk" :  "127",
-	    "sizeOfDiskInGBGateway" :  "20",
+	    "sizeOfDiskInGBGateway" :  "31",
         "location": "[resourceGroup().location]",
         "gatewayPublicIPName": "[concat(variables('vmPrefix'), '-gateway-public-IP')]",
         "ScriptFolder": "scripts",
