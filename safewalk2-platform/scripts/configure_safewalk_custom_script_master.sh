@@ -48,7 +48,7 @@ done
 
 bash $my_dir/safewalk_create_gateway.sh --gateway-name "My Gateway" --gateway-password $GATEWAY_ROOT_PASSWORD --gateway-public-host $GATEWAY_PUBLIC_IP --gateway-ssh-host $GATEWAY_IP --safewalk-host $SAFEWALK_HOSTS
 
-if [ $COUNT_IP > 1 ]; then
+if ! [ "$COUNT_IP" = "1" ]; then
     bash $my_dir/safewalk_bdr_create.sh $SAFEWALK_IP_1 $SAFEWALK_SUBNET_IP
 else
     echo "Do nothing"
