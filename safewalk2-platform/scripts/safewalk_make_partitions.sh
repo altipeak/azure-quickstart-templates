@@ -6,7 +6,7 @@ n # new partition for logs
 p # extended partition
 2 # partition number 
   # default start sector
-+15G
++10G
 n # new partition for tmp
 p # primary partition
 3 # partition number 
