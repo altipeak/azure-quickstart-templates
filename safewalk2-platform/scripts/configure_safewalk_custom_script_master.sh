@@ -12,7 +12,15 @@ ADMIN_PASSWORD=$8
 my_dir=`dirname $0`
 safewalk_dir=/home/safewalk/safewalk_server/sources
 
+service rabbitmq-server stop
+killall rabbitmq-server
+killall beam
+rm -r /var/lib/rabbitmq/mnesia/*
+
 bash $my_dir/safewalk_make_partitions.sh
+
+
+service rabbitmq-server start
 
 sh $my_dir/set_root_password.sh $ROOT_PASSWORD
 

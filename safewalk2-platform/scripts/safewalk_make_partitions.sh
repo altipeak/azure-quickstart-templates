@@ -1,8 +1,5 @@
 #!/bin/bash
 
-killall rabbitmq-server
-rm -r /var/lib/rabbitmq/mnesia/*
-
 #configuring os disk
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/sda
 n # new partition for logs
@@ -83,5 +80,3 @@ echo "${UUID//\"} /var/log ext4 errors=remount-ro 0 1" >> /etc/fstab
 mount -a
 mv /tmp/log/* /var/log/.
 
-
-service rabbitmq-server start
