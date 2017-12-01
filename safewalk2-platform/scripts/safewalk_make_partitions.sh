@@ -1,7 +1,6 @@
 #!/bin/bash
 
-service rabbitmq-server stop
-sleep 10
+killall rabbitmq-server
 rm -r /var/lib/rabbitmq/mnesia/*
 
 #configuring os disk
