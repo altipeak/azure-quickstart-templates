@@ -1,9 +1,9 @@
 # Safewalk IAM solution
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk2-platform%2Fsafewalk2-platform%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk-platform%2Fsafewalk2-platform%2Fazuredeploy.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk2-platform%2Fsafewalk2-platform%2Fazuredeploy.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk-platform%2Fsafewalk2-platform%2Fazuredeploy.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png"/>
 </a>
 
@@ -100,8 +100,8 @@ Create or select a blob storage account on the **same region** where you plan to
 Then add a container to upload the VHD images into.
 
 Download the images to your local drive from:
-<a href="https://safewalk2.blob.core.windows.net/images/Safewalk.vhd">Safewalk VHD image</a>
-<a href="https://safewalk2.blob.core.windows.net/images/Gateway2.vhd">Gateway VHD image</a>
+<a href="https://safewalk2.blob.core.windows.net/images/Safewalk-2.4.34.vhd">Safewalk VHD image</a>
+<a href="https://safewalk2.blob.core.windows.net/images/Gateway-1.8.vhd">Gateway VHD image</a>
 and Upload it manually as a Page Blob into your storage account container.
 
 ## Deployment steps
