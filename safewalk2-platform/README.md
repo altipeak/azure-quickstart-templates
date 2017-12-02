@@ -100,9 +100,12 @@ Create or select a blob storage account on the **same region** where you plan to
 Then add a container to upload the VHD images into.
 
 Download the images to your local drive from:
-<a href="https://safewalk2.blob.core.windows.net/images/Safewalk-2.4.34.vhd">Safewalk VHD image</a>
-<a href="https://safewalk2.blob.core.windows.net/images/Gateway-1.8.vhd">Gateway VHD image</a>
-and Upload it manually as a Page Blob into your storage account container.
+<a href="https://safewalk2.blob.core.windows.net/images/Safewalk-2.4.34.vhd.zip">Safewalk VHD image</a>
+<a href="https://safewalk2.blob.core.windows.net/images/Gateway-1.8.vhd.zip">Gateway VHD image</a>
+decompress it and upload it manually as a Page Blob into your storage account container.
+
+You can also provide us your container URL and the Key2 to perform an internal copy from our VHD containers.
+Example: https://yourstorage.blob.core.windows.net/images key2: 3Rro2yVS41Rhz6XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX8pPY2r0EoYf8Md6YA+ne7TmHwsdkQfU/Kc2Fky3Q==
 
 ## Deployment steps
 
