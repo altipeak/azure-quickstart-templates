@@ -37,3 +37,8 @@ bash $my_dir/safewalk_upgrade.sh
 #bash $my_dir/safewalk_create_gateway.sh --gateway-name "My Gateway" --gateway-password $GATEWAY_ROOT_PASSWORD --gateway-public-host $GATEWAY_PUBLIC_IP --gateway-ssh-host $GATEWAY_IP --safewalk-host $SAFEWALK_IP_1
 
 bash safewalk_bdr_join.sh $SAFEWALK_IP $SAFEWALK_MASTER_IP $SAFEWALK_SUBNET_IP
+
+service gaiaradiusd stop
+sleep 15
+service gaiaradiusd start
+

@@ -63,5 +63,9 @@ else
     #bash safewalk_bdr_create.sh $SAFEWALK_IP_1
 fi
 
+service gaiaradiusd stop
+sleep 15
+service gaiaradiusd start
+
 
 
