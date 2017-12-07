@@ -803,7 +803,7 @@
                             ]
                         },
                         "protectedSettings": {
-                            "commandToExecute": "[concat('bash configure_safewalk_custom_script_slave.sh ''', replace(parameters('SafewalkServerRootPassword'),'''', '''\"''\"'''), ''' ', parameters('SafewalkGatewayIP'), ' ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('gatewayPublicIPName')), '2017-04-01').ipAddress, ' ''', replace(parameters('SafewalkGatewayRootPassword'),'''', '''\"''\"'''), ''' ', variables('firstSafewalkServerIP'), ' ', reference(concat('Microsoft.Network/networkInterfaces/', concat(variables('vmPrefix'), '-server-', copyIndex(), '-NIC')), '2017-04-01').ipConfigurations[0].properties.privateIPAddress, ' ', parameters('subnetLANAddressSpace'))]"
+                            "commandToExecute": "[concat('bash configure_safewalk_custom_script_slave.sh ''', replace(parameters('SafewalkServerRootPassword'),'''', '''\"''\"'''), ''' ', variables('firstSafewalkServerIP'), ' ', reference(concat('Microsoft.Network/networkInterfaces/', concat(variables('vmPrefix'), '-server-', copyIndex(), '-NIC')), '2017-04-01').ipConfigurations[0].properties.privateIPAddress, ' ', parameters('subnetLANAddressSpace'))]"
                         }
                     }
                 }
