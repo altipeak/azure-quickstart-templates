@@ -35,7 +35,7 @@ bash $my_dir/safewalk_iptables.sh
 
 bash $my_dir/safewalk_upgrade.sh
 
-bash $safewalk_dir/bin/safewalk_set_admin_password.sh $ADMIN_PASSWORD
+bash $safewalk_dir/bin/safewalk_set_admin_password.sh "$ADMIN_PASSWORD"
 
 
 
@@ -54,7 +54,7 @@ do
     fi
 done
 
-bash $my_dir/safewalk_create_gateway.sh --gateway-name "My Gateway" --gateway-password $GATEWAY_ROOT_PASSWORD --gateway-public-host $GATEWAY_PUBLIC_IP --gateway-ssh-host $GATEWAY_IP --safewalk-host $SAFEWALK_HOSTS
+bash $my_dir/safewalk_create_gateway.sh --gateway-name "My Gateway" --gateway-password "$GATEWAY_ROOT_PASSWORD" --gateway-public-host $GATEWAY_PUBLIC_IP --gateway-ssh-host $GATEWAY_IP --safewalk-host $SAFEWALK_HOSTS
 
 if ! [ "$COUNT_IP" = "1" ]; then
     bash $my_dir/safewalk_bdr_create.sh $SAFEWALK_IP_1 $SAFEWALK_SUBNET_IP
