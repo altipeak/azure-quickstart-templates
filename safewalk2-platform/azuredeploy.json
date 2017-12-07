@@ -764,6 +764,7 @@
                                 "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', 'safewalk_iptables.sh', parameters('_artifactsLocationSasToken'))]",	
                                 "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', 'setup_snmp.sh', parameters('_artifactsLocationSasToken'))]",
                                 "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', 'setup_timezone.sh', parameters('_artifactsLocationSasToken'))]",	
+                                "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', 'safewalk_set_admin_password.sh', parameters('_artifactsLocationSasToken'))]",	
                                 "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', 'safewalk_bdr_accept_subnet.sh', parameters('_artifactsLocationSasToken'))]"
                             ]
                         },
