@@ -5,7 +5,7 @@ SAFEWALK_SUBNET_IP=$2
 
 my_dir=`dirname $0`
 
-sh $my_dir/set_root_password.sh $ROOT_PASSWORD
+sh $my_dir/set_root_password.sh '$ROOT_PASSWORD'
 
 bash $my_dir/setup_timezone.sh
 

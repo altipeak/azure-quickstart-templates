@@ -22,7 +22,7 @@ bash $my_dir/safewalk_make_partitions.sh
 
 service rabbitmq-server start
 
-sh $my_dir/set_root_password.sh $ROOT_PASSWORD
+sh $my_dir/set_root_password.sh "$ROOT_PASSWORD"
 
 bash $my_dir/setup_timezone.sh
 install-security-updates
