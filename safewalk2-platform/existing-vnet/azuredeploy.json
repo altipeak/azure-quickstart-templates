@@ -16,7 +16,6 @@
         },
         "VnetName": {
             "type": "string",
-            "defaultValue": "SafewalkVirtualNet",
             "metadata": {
                 "description": "A name for the VNet that will be used."
             }
@@ -43,14 +42,12 @@
         },
         "subnetLANAddressSpace": {
             "type": "string",
-            "defaultValue": "10.1.1.0/24",
             "metadata": {
                 "description": "The address space of the specified LAN subnet."
             }
         },
         "SafewalkGatewayIP": {
             "type": "string",
-            "defaultValue": "10.1.2.4",
             "metadata": {
                 "description": "Set to the address that will be assigned to the Safewalk Gateway within the DMZ subnet (e.g. 10.1.2.4)."
             }
@@ -68,9 +65,8 @@
                 "description": "If it's greater than 1, a multimaster cluster of Safewalk nodes will be created and the deployment procedure will take care of configuring the topology between the nodes. To install a single Safewalk node set this parameter to 1."
             }
         },
-        "safewalkIPcomponent": {
+        "safewalkIPComponent": {
             "type": "int",
-            "defaultValue": 5,
             "metadata": {
                 "description": "Last component of the IP that will be assigned to the first Safewalk node. Example: set to 30 if the Safewalk IP is ###.###.###.30"
             }
@@ -140,7 +136,7 @@
         "subnetRef": "[concat(variables('vnetID'), '/subnets/', parameters('subnetLANName'))]",
         "subnetLANAddressSplit": "[split(parameters('subnetLANAddressSpace'), '.')]",
         "subnetLANAddressPrefix": "[concat(variables('subnetLANAddressSplit')[0], '.', variables('subnetLANAddressSplit')[1], '.', variables('subnetLANAddressSplit')[2], '.')]",
-        "firstLastIPComponent": "[parameters('safewalkIPcomponent')]",
+        "firstLastIPComponent": "[parameters('safewalkIPComponent')]",
         "firstSafewalkServerIP": "[concat(variables('subnetLANAddressPrefix'), variables('firstLastIPComponent') )]",
         "lastSafewalkServerIP": "[concat(variables('subnetLANAddressPrefix'), add(variables('firstLastIPComponent'), parameters('numberOfSafewalkInstances')))]",
         "subnetDMZRef": "[concat(variables('vnetID'), '/subnets/', parameters('subnetDMZName'))]",

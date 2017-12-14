@@ -1,17 +1,13 @@
 # Safewalk IAM solution
 
-## Deploy Safewalk on a new Virtual Netork
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk-platform%2Fsafewalk2-platform%2Fnew-vnet" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk-platform%2Fsafewalk2-platform%2Fexisting-vnet%2Fazuredeploy.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
 </a>
-
-## Deploy Safewalk on an existing Virtual Netork
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk-platform%2Fsafewalk2-platform%2Fexisting-vnet" target="_blank">
-<img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Faltipeak%2Fazure-quickstart-templates%2Fsafewalk-platform%2Fsafewalk2-platform%2Fexisting-vnet%2Fazuredeploy.json" target="_blank">
+<img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png"/>
 </a>
 
-
-This template deploys the **Safewalk platform** in your Azure subscription.
+This template deploys the **Safewalk platform** in your Azure subscription using an existing Virtual Network.
 
 `Tags: Safewalk , Altipeak, Authentication, 2Factor, TOTP, OATH2, Identity, Strong, Secure, IAM`
 
@@ -113,7 +109,43 @@ Example: https://yourstorage.blob.core.windows.net/images key2: 3Rro2yVS41Rhz6XX
 
 ## Deployment steps
 
-You can choose to deploy the platform either on a new or exisiting Virtual Network by clicking the "deploy to Azure" button at the beginning of this document or follow the instructions for command line deployment using the scripts in the root of this repo.
+You can click the "deploy to Azure" button at the beginning of this document or follow the instructions for command line deployment using the scripts in the root of this repo.
+
+### Template form parameters
+
+* Subscription - Set to the name of the subcription where you would like to deploy Safewalk.
+* Resource group - Choose the Resource group you like, new or an existing one.
+* Location - Set to the location where you would like to deploy Safewalk. It should be the same as where the VHD images are stored
+* Safewalk VHD Image URL - Set to the URL of the Safewalk VHD image you have uploaded earlier.
+* Safewalk Gateway VHD Image URL - Set to the URL of the Safewalk Gateway VHD image you
+have uploaded earlier.
+* Vnet Name - A name for the existing VNet that will be used.
+* Vnet Resource Group - A name for the resource group where the specified VNet lives.
+* Subnet LAN Name - The name for a subnet that will be used to serve the Safewalk server. It must exist on the specified VNet.
+Use the provided default value or manually set a name for a new subnet
+that will be created during the deployment.
+* Subnet DMZ Name - The name for an Internet facing subnet that will be used to serve the Safewalk Gateway. It must exist on the specified VNet.
+* Subnet LAN Address Space - The address space of the specified LAN subnet. Specify here the address space of the subnet that was provided.
+* Safewalk Gateway IP - Set to the address that will be assigned to the Safewalk Gateway within the
+DMZ subnet (e.g. 10.1.2.4).
+* Number Of Safewalk Instances - Set to the number of Safewalk Server nodes that will be created in the cluster.
+A cluster with 2/3/4 multimaster Safewalk server nodes will be created and the deployment procedure will automatically configure the multimaster topology between all the Safewalk server nodes.
+Note: To install a single Safewalk node without clustering set this parameter to 1.
+* Safewalk IP Component - The latest component of the IP that will be assigned to the first Safewalk server. (e.g. 112 if the desired IP is 10.1.1.112) 
+* Vm Username - A username for a privileged account that will be created in the Safewalk servers and
+in the Safewalk Gateway operating system.
+* Vm Password - The password for the corresponding privileged user account for the Safewalk servers
+and the Safewalk Gateway operating system.
+* Safewalk Server Vm Size - The azure VM size that will be used for the Safewalk server.
+Note: The same size will be assigned to all the Safewalk servers that will participate in the cluster.
+* Safewalk Gateway Vm Size - The azure VM size that will be used for the Safewalk Gateway.
+* Safewalk Server Root Password - The password to set for the root account of the Safewalk server.
+Note: The same root password will be set to all the Safewalk servers that will participate in the
+cluster.
+* Safewalk Server Admin Password - The password to set for the Safewalk server admin account.
+* Safewalk Gateway Root Password - The password to set for the root account of the Safewalk Gateway.
+* _artifactsLocation - Azure reserved parameter. Keep it with the default value.
+* _artifactsLocationSasToken - Azure reserved parameter. Keep it empty.
 
 ## Usage
 
